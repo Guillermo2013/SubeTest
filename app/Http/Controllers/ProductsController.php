@@ -48,9 +48,14 @@ class ProductsController extends Controller
     public function post(Request $request)
     {
 
-        $product = new Products($request->all());
-        $product->save();
-        return $this->show($product->id);  
+        $product = new Products();
+        $data = $request->all();
+        $product->name = $data["name"];
+        $product->description = $data["description"];
+        $product->price = $data["price"];        
+        $product->image = 'https://subebucket.s3.us-east-2.amazonaws.com/'.$request->file('image')->storePublicly( 'images' , 's3');
+        $product->save(); 
+        return redirect()->route("showProduct",["id" => $product->id]);  
     }
 
     public function update($id)
@@ -67,9 +72,9 @@ class ProductsController extends Controller
         $product = $this->model->findOrFail($id);
         $product->name = $data["name"];
         $product->description = $data["description"];
-        $product->price = $data["price"];
-        $product->image = $data["image"];
+        $product->price = $data["price"];        
+        $product->image = (!isset($data["image"]) )?$product->image:'https://subebucket.s3.us-east-2.amazonaws.com/'.$request->file('image')->storePublicly( 'images' , 's3');
         $product->save();
-        return $this->show($product->id);  
+        return redirect()->route("showProduct",["id" => $product->id]);   
     }
 }

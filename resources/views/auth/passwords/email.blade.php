@@ -28,7 +28,6 @@
         <div class="cls-content">
             <div class="cls-content-sm panel">
                 <div class="panel-body">
-                       <img style="width:150px; height:120px;" src="{{URL('img/Sube.png')}}" alt="CloudBiz"><br><br>
                         <div class="card-header">{{ __('Resetear Contraseña') }}</div>
 
                         <div class="card-body">

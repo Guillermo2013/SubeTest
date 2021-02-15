@@ -7,12 +7,19 @@
         <div id="page-content">
        
                 @if(isset($product))
-                    <form class="form-horizontal" method="POST" action="{{ route('postUpdateProduct',['id' => $product->id]) }}">
+                    <form class="form-horizontal" method="POST" action="{{ route('postUpdateProduct',['id' => $product->id]) }}" enctype="multipart/form-data">
                 @else
-                    <form class="form-horizontal" method="POST" action="{{ route('postProduct') }}">
+                    <form class="form-horizontal" method="POST" action="{{ route('postProduct') }}" enctype="multipart/form-data">
                 @endif
                 @csrf
                 <div class="panel-body">
+                    @if(isset($product))
+                        <div  align ="center" class="form-group">
+                            <div  class="col-sm-6">
+                                <img class="img-circle img-border" width="120" height="120" src="{{$product->image}}"/>
+                            </div>
+                        </div>
+                    @endif
                     <div class="form-group">
                         <label class="col-sm-3 control-label" for="demo-is-inputnormal" >Nombre *</label>
                         <div class="col-sm-6">
@@ -49,9 +56,11 @@
                         
                     </div>
                     <div class="form-group">
-                        <label for="demo-is-inputnormal" class="col-sm-3 control-label">Imagen *</label>
+                        <label for="demo-is-inputFile" class="col-sm-3 control-label">Imagen *</label>
                         <div class="col-sm-6">
-                            <input type="file"   class="form-control" id="image" name ="image"  accept="image/*" required>
+                         
+                            <input type="file"   class="form-control" id="image" name ="image"  accept="image/*" >
+                           
                         </div>
                         
                     </div>

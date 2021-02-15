@@ -40,6 +40,15 @@
                                 <ul id="mainnav-menu" class="list-group" >
 						
 						            <!--Category name-->
+                                    <li class="active-link">
+						                <a href="{{ route('catalogue')}}">
+						                    <i class="demo-psi-home"></i>
+						                    <span class="menu-title">
+												<strong>Catalogo</strong>
+											</span>
+						                </a>
+                                    </li>
+
 						            <li class="list-header">Navegacion</li>
 						
                                     <li class="active-link">
