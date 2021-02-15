@@ -4,7 +4,7 @@
                 <!--================================-->
                 <div class="navbar-header">
                     <a href="{{ route('home') }}" class="navbar-brand">
-                        <img src="{{URL('img/logo.png')}}" alt="CloudBiz" class="brand-icon">
+                        <img src="{{URL('img/logo.png')}}" alt="Sube" class="brand-icon">
                         <div class="brand-title">
                             <span class="brand-text">Sube</span>
                         </div>
@@ -42,24 +42,7 @@
                             </a>
                             <div class="dropdown-menu dropdown-menu-md dropdown-menu-right panel-default">
                                 <!-- User dropdown menu -->
-                                <ul class="head-list">
-                                    <li>
-                                    <a href="{{route('updateUsers',['id'=>Auth::user()->id])}}">
-                                            <i class="demo-pli-male icon-lg icon-fw"></i> Perfil
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="{{route('settingsUsers',['id' => Auth::user()->id])}}">
-                                             <i class="demo-pli-gear icon-lg icon-fw"></i> Ajustes
-                                        </a>
-
-                                    </li>
-                                    <li>
-                                        <a href="#">
-                                            <i class="demo-pli-information icon-lg icon-fw"></i> Ayuda
-                                        </a>
-                                    </li>
-                                </ul>
+                               
                                 <!-- Dropdown footer -->
                                 <div class="pad-all text-right">
                                         <a class="btn btn-primary" href="{{ route('logout') }}"
