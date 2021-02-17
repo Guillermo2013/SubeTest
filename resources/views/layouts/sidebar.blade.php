@@ -42,7 +42,7 @@
 						            <!--Category name-->
                                     <li class="active-link">
 						                <a href="{{ route('catalogue')}}">
-						                    <i class="demo-psi-home"></i>
+						                    <i class="ion-android-list"></i>
 						                    <span class="menu-title">
 												<strong>Catalogo</strong>
 											</span>

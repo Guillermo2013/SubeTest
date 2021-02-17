@@ -50,7 +50,6 @@
 																	<th class="row"></th>
 																	<th class="row">nombre</th>
 																	<th class="row">precio</th>
-																	<th class="row">descripcion</th>
 																	<th class="row"></th>
 																</tr>
 															</thead>
@@ -61,7 +60,6 @@
 																		<td> <img class="img-circle img-sm img-border" src="{{$item->image}}"/></td>
 																		<td>{{ $item->name }}</td>
 																		<td>{{ $item->price }}</td>
-																		<td>{{ $item->description }}</td>
 																		<td>
 																				<a href="{{route('showProduct',['id'=>$item->id])}}">	
 																						<button class="btn btn-warning btn-icon btn-circle"><i class="ion-eye icon-lg"></i></button>

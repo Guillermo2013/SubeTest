@@ -11,11 +11,7 @@ class HomeController extends Controller
      *
      * @return void
      */
-    public function __construct()
-    {
-        $this->middleware('auth');
-    }
-
+    
     /**
      * Show the application dashboard.
      *
@@ -27,4 +23,11 @@ class HomeController extends Controller
         $products = $controller->index();
         return view('home',["products" => $products]);
     }
+
+    public function catalogue(){
+        $controller = new ProductsController();
+        $products = $controller->index();
+        return view('welcome',["products" => $products]);
+    }
 }
+

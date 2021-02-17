@@ -13,23 +13,22 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-})->name('catalogue');
+Route::get('/', 'HomeController@catalogue')->name('catalogue');
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/home', 'HomeController@index')->name('home')->middleware('auth');
 
-Route::get('/product/create', 'ProductsController@create')->name('createProduct');
+Route::get('/product/create', 'ProductsController@create')->name('createProduct')->middleware('auth');
 
-Route::post('/product/create', 'ProductsController@post')->name('postProduct');
+Route::post('/product/create', 'ProductsController@post')->name('postProduct')->middleware('auth');
 
-Route::get('/product/{id}', 'ProductsController@show')->name('showProduct');
+Route::get('/product/{id}', 'ProductsController@show')->name('showProduct')->middleware('auth');
 
-Route::get('/product/update/{id}', 'ProductsController@update')->name('updateProduct');
+Route::get('/product/update/{id}', 'ProductsController@update')->name('updateProduct')->middleware('auth');
 
-Route::post('/product/update/{id}', 'ProductsController@postUpdate')->name('postUpdateProduct');
+Route::post('/product/update/{id}', 'ProductsController@postUpdate')->name('postUpdateProduct')->middleware('auth');
 
-Route::get('/message', 'Message_UsersController@index')->name('messageIndex');
+Route::get('/message', 'Message_UsersController@index')->name('messageIndex')->middleware('auth');
 
+Route::post('/send/message', 'Message_UsersController@create')->name('sendMessage');

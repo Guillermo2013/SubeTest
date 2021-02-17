@@ -33,4 +33,11 @@ class Message_UsersController extends Controller
         }
        
     }
+
+    public function create(Request $request)
+    {
+        $message = new Message_users($request->all());
+        $message->save(); 
+        return response()->json(['success'=>'Ajax request submitted successfully']); 
+    }
 }
