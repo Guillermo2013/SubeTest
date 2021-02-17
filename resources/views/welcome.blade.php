@@ -97,7 +97,7 @@
             @if (Route::has('login'))
                 <div class="top-right links">
                     @auth
-                        <a href="{{ url('/home') }}">Home</a>
+                        <a href="{{ url('/home') }}">Administrativo</a>
                     @else
                         <a href="{{ route('login') }}">Login</a>
 
@@ -124,6 +124,7 @@
                         {{$products->links()  }}
                     @endif
                 </div> 
+                <br>
                 <div >
                     <table style="width:100%">
                         @php $count = 0; @endphp
@@ -239,7 +240,7 @@
                         html+= '<td>'
                         html+= '<img width="300" height="300" src="'+image+'" alt=""></div>';
                         html+= '</td>'
-                        html+= '<td>'
+                        html+= '<td style="padding-left:5px">'
                         html+= '<p >Nombre:'+name+'</p>';
                         html+= '<p >Descripcion:'+description+'</p>';
                         html+= '<p >Precio:'+price+'</p>';
@@ -329,7 +330,7 @@
     </script>   
     <div class="footer" align ="right">
         <button class="btn btn-success" data-toggle="modal"   data-target="#sendMailModal">
-            <i class="ion-android-send"></i>
+            <i class="ion-android-send"></i> Mensajes
         </button>
     </div>         
 </html>
