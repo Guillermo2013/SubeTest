@@ -57,8 +57,6 @@
         </div>
     </form>
 
-    <div class="pad-all">
-        <a href="{{ route('password.request') }}" class="btn-link mar-rgt">{{ __('Olvidaste tu contraseña?') }}</a>
-    </div>
+  
              
 @endsection
